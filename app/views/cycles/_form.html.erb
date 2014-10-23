@@ -1,0 +1,57 @@
+<%= form_for(@cycle) do |f| %>
+  <% if @cycle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cycle.errors.count, "error") %> prohibited this cycle from being saved:</h2>
+
+      <ul>
+      <% @cycle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.datetime_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :flavor_id %><br>
+    <%= f.text_field :flavor_id %>
+  </div>
+  <div class="field">
+    <%= f.label :size_id %><br>
+    <%= f.text_field :size_id %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :defect_type_id %><br>
+    <%= f.text_field :defect_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cavity_number %><br>
+    <%= f.number_field :cavity_number %>
+  </div>
+  <div class="field">
+    <%= f.label :job_number %><br>
+    <%= f.number_field :job_number %>
+  </div>
+  <div class="field">
+    <%= f.label :shift %><br>
+    <%= f.number_field :shift %>
+  </div>
+  <div class="field">
+    <%= f.label :location_id %><br>
+    <%= f.text_field :location_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

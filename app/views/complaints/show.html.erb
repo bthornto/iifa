@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @complaint.date %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @complaint.product %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @complaint.reason %>
+</p>
+
+<p>
+  <strong>Synopsis:</strong>
+  <%= @complaint.synopsis %>
+</p>
+
+<%= link_to 'Edit', edit_complaint_path(@complaint) %> |
+<%= link_to 'Back', complaints_path %>

@@ -1,0 +1,25 @@
+<%= form_for(@defect_type) do |f| %>
+  <% if @defect_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@defect_type.errors.count, "error") %> prohibited this defect_type from being saved:</h2>
+
+      <ul>
+      <% @defect_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :sbuxid %><br>
+    <%= f.number_field :sbuxid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

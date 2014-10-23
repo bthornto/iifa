@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @cycle.date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @cycle.user %>
+</p>
+
+<p>
+  <strong>Flavor:</strong>
+  <%= @cycle.flavor %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @cycle.size %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @cycle.quantity %>
+</p>
+
+<p>
+  <strong>Defect type:</strong>
+  <%= @cycle.defect_type %>
+</p>
+
+<p>
+  <strong>Cavity number:</strong>
+  <%= @cycle.cavity_number %>
+</p>
+
+<p>
+  <strong>Job number:</strong>
+  <%= @cycle.job_number %>
+</p>
+
+<p>
+  <strong>Shift:</strong>
+  <%= @cycle.shift %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @cycle.location %>
+</p>
+
+<%= link_to 'Edit', edit_cycle_path(@cycle) %> |
+<%= link_to 'Back', cycles_path %>

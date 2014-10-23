@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2014-10-23 15:36:26
+  user_id: 
+  flavor_id: 
+  size_id: 
+  quantity: 1
+  defect_type_id: 
+  cavity_number: 1
+  job_number: 1
+  shift: 1
+  location_id: 
+
+two:
+  date: 2014-10-23 15:36:26
+  user_id: 
+  flavor_id: 
+  size_id: 
+  quantity: 1
+  defect_type_id: 
+  cavity_number: 1
+  job_number: 1
+  shift: 1
+  location_id: 

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @defect_type.type %>
+</p>
+
+<p>
+  <strong>Sbuxid:</strong>
+  <%= @defect_type.sbuxid %>
+</p>
+
+<%= link_to 'Edit', edit_defect_type_path(@defect_type) %> |
+<%= link_to 'Back', defect_types_path %>

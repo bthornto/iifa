@@ -1,0 +1,27 @@
+<h1>Listing defect_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Sbuxid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @defect_types.each do |defect_type| %>
+      <tr>
+        <td><%= defect_type.type %></td>
+        <td><%= defect_type.sbuxid %></td>
+        <td><%= link_to 'Show', defect_type %></td>
+        <td><%= link_to 'Edit', edit_defect_type_path(defect_type) %></td>
+        <td><%= link_to 'Destroy', defect_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Defect type', new_defect_type_path %>
