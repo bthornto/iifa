@@ -1,7 +1,7 @@
 class Cycle < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :flavor
-  belongs_to :size
-  belongs_to :defect_type
-  belongs_to :location
+  has_and_belongs_to_many :users
+  has_and_belongs_to_many :flavors
+  has_and_belongs_to_many :sizes
+  has_and_belongs_to_many :defect_types
+  has_and_belongs_to_many :locations
 end
