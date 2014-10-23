@@ -69,6 +69,6 @@ class DefectTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def defect_type_params
-      params.require(:defect_type).permit(:type, :sbuxid)
+      params.require(:defect_type).permit(:name, :sbuxid)
     end
 end

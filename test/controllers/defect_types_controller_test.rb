@@ -18,7 +18,7 @@ class DefectTypesControllerTest < ActionController::TestCase
 
   test "should create defect_type" do
     assert_difference('DefectType.count') do
-      post :create, defect_type: { sbuxid: @defect_type.sbuxid, type: @defect_type.type }
+      post :create, defect_type: { name: @defect_type.name, sbuxid: @defect_type.sbuxid }
     end
 
     assert_redirected_to defect_type_path(assigns(:defect_type))
@@ -35,7 +35,7 @@ class DefectTypesControllerTest < ActionController::TestCase
   end
 
   test "should update defect_type" do
-    patch :update, id: @defect_type, defect_type: { sbuxid: @defect_type.sbuxid, type: @defect_type.type }
+    patch :update, id: @defect_type, defect_type: { name: @defect_type.name, sbuxid: @defect_type.sbuxid }
     assert_redirected_to defect_type_path(assigns(:defect_type))
   end
 

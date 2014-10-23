@@ -1,1 +1,1 @@
-json.extract! @defect_type, :id, :type, :sbuxid, :created_at, :updated_at
+json.extract! @defect_type, :id, :name, :sbuxid, :created_at, :updated_at
