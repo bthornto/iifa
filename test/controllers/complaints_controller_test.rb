@@ -18,7 +18,7 @@ class ComplaintsControllerTest < ActionController::TestCase
 
   test "should create complaint" do
     assert_difference('Complaint.count') do
-      post :create, complaint: { date: @complaint.date, product: @complaint.product, reason: @complaint.reason, synopsis: @complaint.synopsis }
+      post :create, complaint: { brand: @complaint.brand, brand_code: @complaint.brand_code, city: @complaint.city, coding_level2: @complaint.coding_level2, date: @complaint.date, duplicate: @complaint.duplicate, notes: @complaint.notes, ownership_type: @complaint.ownership_type, product: @complaint.product, reason: @complaint.reason, state: @complaint.state, store_name: @complaint.store_name, store_number: @complaint.store_number, synopsis: @complaint.synopsis }
     end
 
     assert_redirected_to complaint_path(assigns(:complaint))
@@ -35,7 +35,7 @@ class ComplaintsControllerTest < ActionController::TestCase
   end
 
   test "should update complaint" do
-    patch :update, id: @complaint, complaint: { date: @complaint.date, product: @complaint.product, reason: @complaint.reason, synopsis: @complaint.synopsis }
+    patch :update, id: @complaint, complaint: { brand: @complaint.brand, brand_code: @complaint.brand_code, city: @complaint.city, coding_level2: @complaint.coding_level2, date: @complaint.date, duplicate: @complaint.duplicate, notes: @complaint.notes, ownership_type: @complaint.ownership_type, product: @complaint.product, reason: @complaint.reason, state: @complaint.state, store_name: @complaint.store_name, store_number: @complaint.store_number, synopsis: @complaint.synopsis }
     assert_redirected_to complaint_path(assigns(:complaint))
   end
 

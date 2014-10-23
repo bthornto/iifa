@@ -7,6 +7,16 @@
       <th>Product</th>
       <th>Reason</th>
       <th>Synopsis</th>
+      <th>Notes</th>
+      <th>Store number</th>
+      <th>Store name</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Coding level2</th>
+      <th>Brand code</th>
+      <th>Brand</th>
+      <th>Ownership type</th>
+      <th>Duplicate</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +28,16 @@
         <td><%= complaint.product %></td>
         <td><%= complaint.reason %></td>
         <td><%= complaint.synopsis %></td>
+        <td><%= complaint.notes %></td>
+        <td><%= complaint.store_number %></td>
+        <td><%= complaint.store_name %></td>
+        <td><%= complaint.city %></td>
+        <td><%= complaint.state %></td>
+        <td><%= complaint.coding_level2 %></td>
+        <td><%= complaint.brand_code %></td>
+        <td><%= complaint.brand %></td>
+        <td><%= complaint.ownership_type %></td>
+        <td><%= complaint.duplicate %></td>
         <td><%= link_to 'Show', complaint %></td>
         <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
         <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>

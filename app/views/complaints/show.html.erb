@@ -20,5 +20,55 @@
   <%= @complaint.synopsis %>
 </p>
 
+<p>
+  <strong>Notes:</strong>
+  <%= @complaint.notes %>
+</p>
+
+<p>
+  <strong>Store number:</strong>
+  <%= @complaint.store_number %>
+</p>
+
+<p>
+  <strong>Store name:</strong>
+  <%= @complaint.store_name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @complaint.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @complaint.state %>
+</p>
+
+<p>
+  <strong>Coding level2:</strong>
+  <%= @complaint.coding_level2 %>
+</p>
+
+<p>
+  <strong>Brand code:</strong>
+  <%= @complaint.brand_code %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @complaint.brand %>
+</p>
+
+<p>
+  <strong>Ownership type:</strong>
+  <%= @complaint.ownership_type %>
+</p>
+
+<p>
+  <strong>Duplicate:</strong>
+  <%= @complaint.duplicate %>
+</p>
+
 <%= link_to 'Edit', edit_complaint_path(@complaint) %> |
 <%= link_to 'Back', complaints_path %>
