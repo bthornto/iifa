@@ -28,10 +28,10 @@
   		</div><!-- /.container-fluid -->
 	</nav>
 	<div class="row">
-	<div class="col-md-3">
+	<div class="col-md-2">
 			<div class="bs-component">
               <ul class="nav nav-pills nav-stacked">
-                <li class="<%= 'active' if params[:controller] == 'complaints' %>"><%= link_to "Dashboard" , controller: "complaints" %></li>
+                <li class="<%= 'active' if params[:controller] == 'dashboard/render' %>"><%= link_to "Dashboard" , "dashboard/render" %></li>
                 <li class="<%= 'active' if params[:controller] == 'complaints' %>"><%= link_to "Complaints" , controller: "complaints" %></li>
                 <li class="<%= 'active' if params[:controller] == 'cycles' %>"><%= link_to "Cycles" , controller: "cycles"  %></li>
                 <li class="<%= 'active' if params[:controller] == 'flavors' %>"><%= link_to "Flavors" , controller: "flavors"  %></li>
@@ -41,7 +41,7 @@
               </ul>
             </div>
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-9">
 			<div class="row">
 				<%= yield %>
 			</div>
