@@ -12,10 +12,10 @@
 #  t.datetime "created_at"
 #  t.datetime "updated_at"
 
-require 'csv'
-require 'pp'
 desc "Gets cycles"
 task :get_cycles => [:environment] do
-  #Cycle.create(flavor_id: Flavor.find(1), quantity: 2)
-  pp Cycle.all
+  cycles = Cycle.all
+  cycles.each do |cycle|
+    pp cycle.defect_types
+  end
 end

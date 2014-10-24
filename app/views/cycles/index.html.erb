@@ -21,15 +21,15 @@
     <% @cycles.each do |cycle| %>
       <tr>
         <td style="font-size: 10px;"><%= cycle.date.strftime("%d %b. %y") %></td>
-        <td style="font-size: 10px;"><%= cycle.user_id %></td>
+        <td style="font-size: 10px;"><%= cycle.user.name %></td>
         <td style="font-size: 10px;"><%= cycle.flavor_id %></td>
         <td style="font-size: 10px;"><%= cycle.size_id %></td>
         <td style="font-size: 10px;"><%= cycle.quantity %></td>
-        <td style="font-size: 10px;"><%= cycle.defect_type_id %></td>
+        <td style="font-size: 10px;"><%= cycle.defect_type_ids %></td>
         <td style="font-size: 10px;"><%= cycle.cavity_number %></td>
         <td style="font-size: 10px;"><%= cycle.job_number %></td>
         <td style="font-size: 10px;"><%= cycle.shift %></td>
-        <td style="font-size: 10px;"><%= cycle.location_id %></td>
+        <td style="font-size: 10px;"><%= cycle.location.name %></td>
         <td style="font-size: 10px;"><%= link_to('Show', cycle, :class => 'btn btn-xs btn-primary')  %></td>
         <td style="font-size: 10px;"><%= link_to('Edit', edit_cycle_path(cycle), :class => 'btn btn-xs btn-warning')  %></td>
         <td style="font-size: 10px;"><%= link_to('Destroy', cycle, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-xs btn-danger')  %></td>
