@@ -42,10 +42,11 @@ task :new_cycle => [:environment] do
       foo =  Cycle.all
       pp foo
       foo.each do |x|
-        puts x.flavor
+        pp x.defect_types
       end
 
-      pp Flavor.all
-      
+
+      #pp Flavor.all
+
 
 end
