@@ -12,6 +12,31 @@ class ComplaintsController < ApplicationController
   def show
   end
 
+def getall
+    complaints = Complaint.all
+    hash = Hash.new
+    hash[:data] = []
+    complaints.each do |complaint|
+      temp_array = []
+      temp_array << complaint.date.strftime("%m/%d/%Y")
+      temp_array << complaint.product
+      temp_array << complaint.reason
+      temp_array << complaint.synopsis
+      temp_array << complaint.notes
+      temp_array << complaint.store_number
+      temp_array << complaint.store_name
+      temp_array << complaint.city
+      temp_array << complaint.state
+      temp_array << complaint.coding_level2
+      temp_array << complaint.brand_code
+      temp_array << complaint.brand
+      temp_array << complaint.ownership_type
+      temp_array << complaint.duplicate
+      hash[:data] << temp_array
+    end
+    render json: hash
+  end
+
   # GET /complaints/new
   def new
     @complaint = Complaint.new
