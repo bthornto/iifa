@@ -12,7 +12,7 @@ class DashboardController < ApplicationController
       ]
 
       f.legend(:align => 'right', :verticalAlign => 'top', :y => 75, :x => -50, :layout => 'vertical',)
-      f.chart({:defaultSeriesType=>"column"})
+      f.chart({:defaultSeriesType=>"line"})
     end
   end
 end
