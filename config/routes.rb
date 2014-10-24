@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'dashboard/render'
+  get 'dashboard/index'
 
   resources :cycles
 
