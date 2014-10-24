@@ -11,7 +11,7 @@
   		<div class="container-fluid">
     		<!-- Brand and toggle get grouped for better mobile display -->
     		<div class="navbar-header">
-    			<a class="navbar-brand" style="padding: 5px 0px 0px 0px; margin: 0px;" href="#"><img src="images/evolution_logo.png" /></a>
+    			<a class="navbar-brand" style="padding: 5px 0px 0px 0px; margin: 0px;" href="#"><%= image_tag "evolution_logo.png" %></a>
     		</div>
 
     		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,13 +31,13 @@
 	<div class="col-md-3">
 			<div class="bs-component">
               <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#">Dashboard</a></li>
-                <li><a href="#">Complaints</a></li>
-                <li><a href="#">Cycles</a></li>
-                <li><a href="#">Flavor</a></li>
-                <li><a href="#">Location</a></li>
-                <li><a href="#">Defect</a></li>
-                <li><a href="#">Size</a></li>
+                <li class="<%= 'active' if params[:controller] == 'complaints' %>"><%= link_to "Dashboard" , controller: "complaints" %></li>
+                <li class="<%= 'active' if params[:controller] == 'complaints' %>"><%= link_to "Complaints" , controller: "complaints" %></li>
+                <li class="<%= 'active' if params[:controller] == 'cycles' %>"><%= link_to "Cycles" , controller: "cycles"  %></li>
+                <li class="<%= 'active' if params[:controller] == 'flavors' %>"><%= link_to "Flavors" , controller: "flavors"  %></li>
+                <li class="<%= 'active' if params[:controller] == 'locations' %>"><%= link_to "Locations" , controller: "locations"  %></li>
+                <li class="<%= 'active' if params[:controller] == 'defect_types' %>"><%= link_to "Defects" , controller: "defect_types"  %></li>
+                <li class="<%= 'active' if params[:controller] == 'sizes' %>"><%= link_to "Sizes" , controller: "sizes" %></li>
               </ul>
             </div>
 		</div>
