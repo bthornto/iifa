@@ -6,6 +6,6 @@ task :import_flavors => [:environment] do
 
   File.open(file).each do |flavor|
     puts flavor
-    Flavor.create ({ :name => flavor })
+    Flavor.create ({ :name => flavor.strip })
 end
 end
