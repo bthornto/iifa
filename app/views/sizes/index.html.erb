@@ -1,9 +1,9 @@
-<h1>Listing sizes</h1>
-
-<table>
+<h1>Sizes</h1>
+<%= link_to 'Add New Size', new_size_path, :class => 'btn btn-large btn-primary' %>
+<table class="table table-striped table-hover" style="font-size: 10px;">
   <thead>
     <tr>
-      <th>Size</th>
+      <th>Size (oz)</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -11,15 +11,11 @@
   <tbody>
     <% @sizes.each do |size| %>
       <tr>
-        <td><%= size.size %></td>
-        <td><%= link_to 'Show', size %></td>
-        <td><%= link_to 'Edit', edit_size_path(size) %></td>
-        <td><%= link_to 'Destroy', size, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td style="font-size: 10px;"><%= size.size %></td>
+        <td style="font-size: 10px; width: 20px"><%= link_to('Show', size, :class => 'btn btn-xs btn-primary')  %></td>
+        <td style="font-size: 10px; width: 20px"><%= link_to('Edit', edit_size_path(size), :class => 'btn btn-xs btn-warning')  %></td>
+        <td style="font-size: 10px; width: 20px"><%= link_to('Destroy', size, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-xs btn-danger')  %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Size', new_size_path %>
