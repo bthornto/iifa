@@ -32,10 +32,20 @@ task :new_cycle => [:environment] do
         # pp Cycle.find(1296).defect_types
         # #pp foo
 
-      foo =  DefectType.all
+      # foo =  DefectType.all
+      # foo.each do |x|
+      #   puts x.name
+      #   grouped = x.cycles.group_by{ |item| item.date.day }
+      #   grouped.each do |k,v|
+      #     puts "#{k}---------#{v.count}"
+      #   end
+      foo =  Cycle.all
+      pp foo
       foo.each do |x|
-        puts "DEFECT--------#{x.name}"
-        puts x.cycles.where(date: 1.month.ago..Date.today).count
+        puts x.flavor
       end
+
+      pp Flavor.all
+      
 
 end

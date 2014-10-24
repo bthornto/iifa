@@ -23,7 +23,7 @@ namespace :import do
   task flavors: :environment do
     file = 'db/flavors.txt'
     File.open(file).each do |flavor|
-      Flavor.create ({ name: flavor })
+      Flavor.create ({ name: flavor.strip })
     end
   end
 
