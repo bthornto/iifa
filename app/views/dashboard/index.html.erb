@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Panel title</h3>
+        <h3 class="panel-title">Count by location</h3>
       </div>
       <div class="panel-body">
           <%= high_chart("some_id", @chart) %>
@@ -10,13 +10,13 @@
     </div>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Panel title</h3>
+        <h3 class="panel-title">Customer Complaints</h3>
       </div>
       <div class="panel-body">
-        <div id="complaint"></div>
+        <div id="complaints"></div>
       </div>
     </div>
   </div>
@@ -24,10 +24,10 @@
   <div class="col-lg-3">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Panel title</h3>
+        <h3 class="panel-title">Defects past 30 days</h3>
       </div>
-      <div class="panel-body">
-          Panel content
+      <div class="panel-body text-center">
+          <h1 style"text-align: center"><%= @foo %></h1>
       </div>
     </div>
   </div>
@@ -117,43 +117,45 @@ $(function () {
 
 <script>
 $(function () {
-  $.getJSON('/dashboard/getcomplaints', function (pie) {
-    $('#complaint').highcharts({
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: 0,
-            plotShadow: false
-        },
+  $.getJSON('/dashboard/getcomplaints', function (data) {
+
+    $('#complaints').highcharts({
         title: {
-            text: 'Browser<br>shares',
-            align: 'center',
-            verticalAlign: 'middle',
-            y: 50
+            text: null,
+            x: -20 //center
+        },
+
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Count'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            valueSuffix: '°C'
         },
-        plotOptions: {
-            pie: {
-                dataLabels: {
-                    enabled: true,
-                    distance: -50,
-                    style: {
-                        fontWeight: 'bold',
-                        color: 'white',
-                        textShadow: '0px 1px 2px black'
-                    }
-                },
-                startAngle: -90,
-                endAngle: 90,
-                center: ['50%', '75%']
-            }
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
         },
         series: [{
-            type: 'pie',
-            name: 'Browser share',
-            innerSize: '50%',
-            data: complaint
+            name: 'Customer Complaints',
+            data: data,
+
         }]
     });
+
+  });
+
 });
+</script>

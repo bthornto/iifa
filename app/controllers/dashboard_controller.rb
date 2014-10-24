@@ -22,6 +22,22 @@ class DashboardController < ApplicationController
       f.chart({:defaultSeriesType=>"column"})
     end
 
+    @foo =  Cycle.where(date: 30.days.ago..Time.now).sum(:quantity)
+    puts @foo
+    #nums = @foo.collect{ |x| x.quantity }
+
+    #@foo =
+    #nums.each do |num|
+    #puts nums.inject(:+)
+
+
+    # foo.each do |x|
+    #   puts x.name
+    #   grouped = x.cycles.group_by{ |item| item.date.day }
+    #   grouped.each do |k,v|
+    #     puts "#{k}---------#{v.count}"
+    #   end
+
   end
 
   def getpie
@@ -32,9 +48,9 @@ class DashboardController < ApplicationController
   end
   def getcomplaints
     complaints = Complaint.all
-    c_by_month = complaints.groupby(:date)
-    pp c_by_month
-    render json: array
+    c_by_month = complaints.group_by{ |x| x.date.month}
+    foo = c_by_month.collect{|key,value| [value.count]}
+    render json: foo
   end
 
 end
