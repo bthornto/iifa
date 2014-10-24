@@ -16,7 +16,7 @@
         <h3 class="panel-title">Panel title</h3>
       </div>
       <div class="panel-body">
-          <div></div>
+        <div id="complaint"></div>
       </div>
     </div>
   </div>
@@ -87,13 +87,20 @@ $(function () {
                   cursor: 'pointer',
                   dataLabels: {
                       enabled: true,
-                      format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                      format: '<b>{point.percentage:.1f} %',
                       style: {
                           color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                      }
+                      },
+                      showInLegend: true
                   }
               }
           },
+          legend: {
+            align: 'right',
+            verticalAlign: 'top',
+            layout: 'vertical'
+            },
+
           series: [{
               type: 'pie',
               name: 'Percentage',
@@ -103,3 +110,50 @@ $(function () {
     });
   });
 </script>
+
+
+
+
+
+<script>
+$(function () {
+  $.getJSON('/dashboard/getcomplaints', function (pie) {
+    $('#complaint').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false
+        },
+        title: {
+            text: 'Browser<br>shares',
+            align: 'center',
+            verticalAlign: 'middle',
+            y: 50
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    distance: -50,
+                    style: {
+                        fontWeight: 'bold',
+                        color: 'white',
+                        textShadow: '0px 1px 2px black'
+                    }
+                },
+                startAngle: -90,
+                endAngle: 90,
+                center: ['50%', '75%']
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Browser share',
+            innerSize: '50%',
+            data: complaint
+        }]
+    });
+});

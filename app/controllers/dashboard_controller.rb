@@ -27,8 +27,14 @@ class DashboardController < ApplicationController
   def getpie
     defect_types = DefectType.all
     total_cycles = Cycle.all.count
-    puts total_cycles.class
     array = defect_types.map{ |x| [x.name, (x.cycles.count.to_f/total_cycles.to_f*100)] }
     render json: array
   end
+  def getcomplaints
+    complaints = Complaint.all
+    c_by_month = complaints.groupby(:date)
+    pp c_by_month
+    render json: array
+  end
+
 end
