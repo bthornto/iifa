@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+
   require 'pp'
   def index
     locations = Location.all
@@ -14,16 +15,20 @@ class DashboardController < ApplicationController
       #f.title(:text => "Population vs GDP For 5 Big Countries [2009]")
       f.xAxis(:categories => location_names )
       f.series(:name => "Total Count by location", :yAxis => 0, :data => count_by_location)
-
       f.yAxis [
         {:title => {:text => "Total", :margin => 5} }
       ]
-
       f.chart({:defaultSeriesType=>"column"})
       #f.legend(layout: 'vertical', align: 'bottom', verticalAlign: 'top')
     end
 
-    @foo =  Cycle.where(date: 30.days.ago..Time.now).sum(:quantity)
+    foo =  Cycle.where(date: 30.days.ago..Time.now)
+    bar = foo.collect{ |x| x.quantity}
+    x=0
+    bar.each do |num|
+      x = x + num if num
+    end
+    @foo = x
     puts @foo
     #nums = @foo.collect{ |x| x.quantity }
 
