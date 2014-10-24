@@ -1,4 +1,4 @@
-<%= form_for(@cycle) do |f| %>
+<%= form_for @cycle, html: {:class => "form-horizontal col-md-offset-1 col-md-8"} do |f| %>
   <% if @cycle.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@cycle.errors.count, "error") %> prohibited this cycle from being saved:</h2>
@@ -10,48 +10,41 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
+  <%= f.hidden_field :task_id, value: 1 %>
+  <%= f.hidden_field :date, value: DateTime.now %>
+  <div class="form-group">
     <%= f.label :flavor_id %><br>
-    <%= f.text_field :flavor_id %>
+    <%= f.select(:flavor_id, options_from_collection_for_select(Flavor.all, :id, :name), {}, { class: 'form-control' })  %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :size_id %><br>
-    <%= f.text_field :size_id %>
+    <%= f.select(:size_id, options_from_collection_for_select(Size.all, :id, :size), {}, { class: 'form-control' })  %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :quantity %><br>
-    <%= f.number_field :quantity %>
+    <%= f.number_field :quantity, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :defect_type_id %><br>
-    <%= f.text_field :defect_type_id %>
+    <%= f.select(:defect_types, options_from_collection_for_select(DefectType.all, :id, :name), {}, { multiple: true, class: 'form-control' })  %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :cavity_number %><br>
-    <%= f.number_field :cavity_number %>
+    <%= f.number_field :cavity_number, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :job_number %><br>
-    <%= f.number_field :job_number %>
+    <%= f.number_field :job_number, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :shift %><br>
-    <%= f.number_field :shift %>
+    <%= f.number_field :shift, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :location_id %><br>
-    <%= f.text_field :location_id %>
+    <%= f.select(:location_id, options_from_collection_for_select(Location.all, :id, :name), {}, { class: 'form-control' })  %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-default" %>
   </div>
 <% end %>
