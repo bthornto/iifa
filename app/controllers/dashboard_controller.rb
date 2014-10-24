@@ -1,23 +1,34 @@
 class DashboardController < ApplicationController
+  require 'pp'
   def index
-    # @complaints = LazyHighCharts::HighChart.new('graph') do |f|
-    #   f.title(text: "Customer Complaints by Type")
-    #   f.xAxis()
-    #   f.series(name: "Expired", yAxis: 0, data: )
-    # end
-    # @chart = LazyHighCharts::HighChart.new('graph') do |f|
-    #   f.title(:text => "Population vs GDP For 5 Big Countries [2009]")
-    #   f.xAxis(:categories => ["United States", "Japan", "China", "Germany", "France"])
-    #   f.series(:name => "GDP in Billions", :yAxis => 0, :data => [14119, 5068, 4985, 3339, 2656])
-    #   f.series(:name => "Population in Millions", :yAxis => 1, :data => [310, 127, 1340, 81, 65])
-    #
-    #   f.yAxis [
-    #     {:title => {:text => "GDP in Billions", :margin => 70} },
-    #     {:title => {:text => "Population in Millions"}, :opposite => true},
-    #   ]
-    #
-    #   f.legend(:align => 'right', :verticalAlign => 'top', :y => 75, :x => -50, :layout => 'vertical',)
-    #   f.chart({:defaultSeriesType=>"line"})
-    # end
+    locations = Location.all
+    location_names = locations.map{ |x| x.name }
+    count_by_location = []
+    total = 0
+    locations.each do |location|
+      count_by_location << location.cycle.count
+      total += location.cycle.count
+    end
+
+    @chart = LazyHighCharts::HighChart.new('graph') do |f|
+      #f.title(:text => "Population vs GDP For 5 Big Countries [2009]")
+      f.xAxis(:categories => location_names )
+      f.series(:name => "Total Count by location", :yAxis => 0, :data => count_by_location)
+
+      f.yAxis [
+        {:title => {:text => "Total", :margin => 70} }
+      ]
+
+      f.chart({:defaultSeriesType=>"column"})
+    end
+
+  end
+
+  def getpie
+    defect_types = DefectType.all
+    total_cycles = Cycle.all.count
+    puts total_cycles.class
+    array = defect_types.map{ |x| [x.name, (x.cycles.count.to_f/total_cycles.to_f*100)] }
+    render json: array
   end
 end

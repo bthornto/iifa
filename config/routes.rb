@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'cycles/dt'
   get 'cycles/getall'
 
+  get 'dashboard/getpie'
+
   resources :cycles
 
   resources :complaints
