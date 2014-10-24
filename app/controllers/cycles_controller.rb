@@ -89,6 +89,6 @@ class CyclesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cycle_params
-      params.require(:cycle).permit(:date, :user_id, :flavor_id, :size_id, :quantity, :defect_type_id, :cavity_number, :job_number, :shift, :location_id)
+      params.require(:cycle).permit(:date, :user_id, :flavor_id, :size_id, :quantity, :defect_type_id, :defect_types, :cavity_number, :job_number, :shift, :location_id)
     end
 end

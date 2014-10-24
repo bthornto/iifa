@@ -20,6 +20,7 @@ class DashboardController < ApplicationController
       ]
 
       f.chart({:defaultSeriesType=>"column"})
+      #f.legend(layout: 'vertical', align: 'bottom', verticalAlign: 'top')
     end
 
     @foo =  Cycle.where(date: 30.days.ago..Time.now).sum(:quantity)
