@@ -18,6 +18,7 @@ def getall
     hash[:data] = []
     complaints.each do |complaint|
       temp_array = []
+      temp_array << complaint.id
       temp_array << complaint.date.strftime("%m/%d/%Y")
       temp_array << complaint.product
       temp_array << complaint.reason
