@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+@media (min-width: 768px)
+{
+    .navbar-header
+    {
+        float: none;
+    }
+
+    .navbar-toggle
+    {
+        display: block;
+    }
+
+    .navbar-collapse.collapse-always
+    {
+        display: none !important;
+    }
+}
