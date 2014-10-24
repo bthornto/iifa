@@ -42,7 +42,7 @@ task :new_cycle => [:environment] do
       foo =  Cycle.all
       pp foo
       foo.each do |x|
-        pp x.defect_types
+        puts x.defect_types.map{ |x| x.name}
       end
 
 
