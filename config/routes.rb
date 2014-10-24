@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   get 'dashboard/index'
 
+  get 'cycles/dt'
+  get 'cycles/getall'
+
   resources :cycles
 
   resources :complaints

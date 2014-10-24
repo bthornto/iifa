@@ -1,9 +1,10 @@
 class DashboardController < ApplicationController
   def index
-    @complaints = LazyHighCharts::HighChart.new('graph') do |f|
-      f.title(text: "Customer Complaints by Type")
-      f.xAxis()
-      f.series(name: "Expired", yAxis: 0, data: )
+    # @complaints = LazyHighCharts::HighChart.new('graph') do |f|
+    #   f.title(text: "Customer Complaints by Type")
+    #   f.xAxis()
+    #   f.series(name: "Expired", yAxis: 0, data: )
+    # end
     # @chart = LazyHighCharts::HighChart.new('graph') do |f|
     #   f.title(:text => "Population vs GDP For 5 Big Countries [2009]")
     #   f.xAxis(:categories => ["United States", "Japan", "China", "Germany", "France"])

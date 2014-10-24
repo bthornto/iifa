@@ -1,10 +1,31 @@
 class CyclesController < ApplicationController
+  require 'pp'
   before_action :set_cycle, only: [:show, :edit, :update, :destroy]
 
   # GET /cycles
   # GET /cycles.json
   def index
     @cycles = Cycle.all
+  end
+
+  def dt
+  end
+
+  def getall
+    cycles = Cycle.all
+    hash = Hash.new
+    hash[:data] = []
+    cycles.each do |cycle|
+      temp_array = []
+      temp_array << cycle.date.strftime("%m/%d/%Y")
+      if cycle.flavor then temp_array << cycle.flavor.name else temp_array << "unknown" end
+      if cycle.size then temp_array << cycle.size.size else temp_array << "unknown" end
+      temp_array << cycle.quantity
+      temp_array << cycle.location.name
+      pp temp_array
+      hash[:data] << temp_array
+    end
+    render json: hash
   end
 
   # GET /cycles/1
