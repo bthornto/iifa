@@ -24,5 +24,5 @@ task :new_cycle => [:environment] do
       # pp import
       # pp Cycle.create!(import)
       #pp Cycle.all
-      puts Cycle.find(1303).location.name
+      puts Cycle.find(1303).defect_type
 end
