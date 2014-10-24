@@ -1,3 +1,3 @@
 class DefectType < ActiveRecord::Base
-  has_many_and_belongs_to :cycles
+  has_and_belongs_to_many :cycles
 end
