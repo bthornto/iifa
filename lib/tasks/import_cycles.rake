@@ -18,9 +18,10 @@ task :import_cycles => [:environment] do
       import_cycle = []
       defects.each do |c_id|
          temp = DefectType.find_by sbuxid: c_id
-         import_cycle << temp.id unless temp.nil?
+         import_cycle << temp unless temp.nil?
       end
-      import['defect_type_id'] = import_cycle
+      import['defect_types'] = import_cycle
+
       import['cavity_number'] = cycle['cavitynum']
       import['job_number'] = cycle['jobnum']
       import['shift'] = cycle['shift']

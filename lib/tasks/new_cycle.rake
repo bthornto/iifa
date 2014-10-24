@@ -1,5 +1,5 @@
 task :new_cycle => [:environment] do
-      # import = {}
+      #import = {}
       # #import['date'] = Date.strptime(cycle['date'], '%m/%d/%y')
       # import['user_id'] = 1
       # # temp = Flavor.find_by name: cycle['flavor']
@@ -15,14 +15,27 @@ task :new_cycle => [:environment] do
       # #    dt = DefectType.find_by sbuxid: cycle['defecttype']
       # #    import_cycle << dt.id unless temp.nil?
       # # end
-      # import['defect_type_id'] = "5,5"
+      #import['defect_type_id'] = "5,5"
       # # import['cavity_number'] = cycle['cavitynum']
       # # import['job_number'] = cycle['jobnum']
       # # import['shift'] = cycle['shift']
       # # temp = Location.find_by sbuxid: cycle['location']
       # # import['location_id'] = temp.id unless temp.nil?
       # pp import
-      # pp Cycle.create!(import)
+      #pp Cycle.create!(import)
       #pp Cycle.all
-      puts Cycle.find(1303).defect_type
+
+      #foo = Cycle.find_by job_number: 169187
+        #
+        # foo = Cycle.all.select {|i| i.job_number == 169187 }
+        #
+        # pp Cycle.find(1296).defect_types
+        # #pp foo
+
+      foo =  DefectType.all
+      foo.each do |x|
+        puts "DEFECT--------#{x.name}"
+        puts x.cycles.where(date: 1.month.ago..Date.today).count
+      end
+
 end
