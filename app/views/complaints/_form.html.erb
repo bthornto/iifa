@@ -11,63 +11,63 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field-group">
     <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
+    <%= f.datetime_select :date , :class => 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :product %><br>
-    <%= f.text_field :product %>
+    <%= f.text_field :product , :class => 'form-control input-sm' %>
   </div>
   <div class="field">
     <%= f.label :reason %><br>
-    <%= f.text_field :reason %>
+    <%= f.text_field :reason , :class => 'form-control input-sm' %>
   </div>
   <div class="field">
     <%= f.label :synopsis %><br>
-    <%= f.text_area :synopsis %>
+    <%= f.text_area :synopsis , :class => 'form-control input-sm'  %>
   </div>
   <div class="field">
     <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
+    <%= f.text_area :notes , :class => 'form-control input-sm'  %>
   </div>
   <div class="field">
     <%= f.label :store_number %><br>
-    <%= f.number_field :store_number %>
+    <%= f.number_field :store_number , :class => 'form-control input-sm'  %>
   </div>
   <div class="field">
     <%= f.label :store_name %><br>
-    <%= f.text_field :store_name %>
+    <%= f.text_field :store_name , :class => 'form-control input-sm'  %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
-    <%= f.text_field :city %>
+    <%= f.text_field :city , :class => 'form-control input-sm' %>
   </div>
   <div class="field">
     <%= f.label :state %><br>
-    <%= f.text_field :state %>
+    <%= f.text_field :state , :class => 'form-control input-sm' %>
   </div>
   <div class="field">
     <%= f.label :coding_level2 %><br>
-    <%= f.text_field :coding_level2 %>
+    <%= f.text_field :coding_level2 , :class => 'form-control input-sm' %>
   </div>
   <div class="field">
     <%= f.label :brand_code %><br>
-    <%= f.text_field :brand_code %>
+    <%= f.text_field :brand_code , :class => 'form-control input-sm' %>
   </div>
   <div class="field">
     <%= f.label :brand %><br>
-    <%= f.text_field :brand %>
+    <%= f.text_field :brand , :class => 'form-control input-sm' %>
   </div>
   <div class="field">
     <%= f.label :ownership_type %><br>
-    <%= f.text_field :ownership_type %>
+    <%= f.text_field :ownership_type , :class => 'form-control input-sm' %>
   </div>
   <div class="field">
     <%= f.label :duplicate %><br>
-    <%= f.check_box :duplicate %>
+    <%= f.check_box :duplicate , :class => 'form-control input-sm' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn btn-xs btn-primary' %>
   </div>
 <% end %>
