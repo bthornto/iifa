@@ -22,7 +22,6 @@ class CyclesController < ApplicationController
       if cycle.size then temp_array << cycle.size.size else temp_array << "unknown" end
       temp_array << cycle.quantity
       temp_array << cycle.location.name
-      pp temp_array
       hash[:data] << temp_array
     end
     render json: hash
