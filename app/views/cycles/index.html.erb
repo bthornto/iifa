@@ -21,7 +21,7 @@
     <% @cycles.each do |cycle| %>
       <tr>
         <td style="font-size: 10px;"><%= cycle.date.strftime("%d %b. %y") %></td>
-        <td style="font-size: 10px;"><%= cycle.user.name %></td>
+        <td style="font-size: 10px;"><%= cycle.user_id %></td>
         <td style="font-size: 10px;"><%= cycle.flavor_id %></td>
         <td style="font-size: 10px;"><%= cycle.size_id %></td>
         <td style="font-size: 10px;"><%= cycle.quantity %></td>
