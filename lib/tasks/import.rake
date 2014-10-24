@@ -43,7 +43,7 @@ namespace :import do
 
   desc "Imports cycles"
   task cycles: :environment do
-      CSV.foreach('db/cycles.csv', :headers => true) do |row|
+      CSV.foreach('db/cycles2.csv', :headers => true) do |row|
         cycle = (row.to_hash)
         import = {}
         import['date'] = Date.strptime(cycle['date'], '%m/%d/%y')
