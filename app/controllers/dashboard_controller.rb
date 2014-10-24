@@ -16,7 +16,7 @@ class DashboardController < ApplicationController
       f.series(:name => "Total Count by location", :yAxis => 0, :data => count_by_location)
 
       f.yAxis [
-        {:title => {:text => "Total", :margin => 70} }
+        {:title => {:text => "Total", :margin => 5} }
       ]
 
       f.chart({:defaultSeriesType=>"column"})
