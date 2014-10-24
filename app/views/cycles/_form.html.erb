@@ -38,7 +38,14 @@
   </div>
   <div class="form-group">
     <%= f.label :shift %><br>
-    <%= f.select(:shift, options_from_collection_for_select([{id: 1, name: "First Shift"}, {id: 2, name: "Second Shift"}, {id: 3, name: "Third Shift"}]), { class: 'form-control input-md' })  %>
+    <div class="col-md-3">
+      <select id="shift" name="shift" class="form-control input-md">
+        <option value="0" selected disabled>Choose Shift</option>
+        <option value="1">First</option>
+        <option value="2">Second</option>
+        <option value="3">Third</option>
+      </select>
+    </div>
   </div>
   <div class="form-group">
     <%= f.label :location_id %><br>
