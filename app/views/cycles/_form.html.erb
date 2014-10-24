@@ -1,4 +1,4 @@
-<%= form_for @cycle, html: {:class => "form-horizontal col-md-offset-1 col-md-8"} do |f| %>
+<%= form_for @cycle, html: {:class => "form-horizontal col-md-12"} do |f| %>
   <% if @cycle.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@cycle.errors.count, "error") %> prohibited this cycle from being saved:</h2>
@@ -17,8 +17,11 @@
     <%= f.select(:flavor_id, options_from_collection_for_select(Flavor.all, :id, :name), {}, { class: 'form-control' })  %>
   </div>
   <div class="form-group">
-    <%= f.label :size_id %><br>
-    <%= f.select(:size_id, options_from_collection_for_select(Size.all, :id, :size), {}, { class: 'form-control' })  %>
+    <ul>
+    <% Size.all.each do |size| %>
+      <li><%= size.size %></li>
+    <% end %>
+    </ul>
   </div>
   <div class="form-group">
     <%= f.label :quantity %><br>
