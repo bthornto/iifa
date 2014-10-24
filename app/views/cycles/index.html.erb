@@ -21,15 +21,15 @@
     <% @cycles.each do |cycle| %>
       <tr>
         <td><%= cycle.date %></td>
-        <td><%= cycle.user %></td>
-        <td><%= cycle.flavor %></td>
-        <td><%= cycle.size %></td>
+        <td><%= cycle.user_id %></td>
+        <td><%= cycle.flavor_id %></td>
+        <td><%= cycle.size_id %></td>
         <td><%= cycle.quantity %></td>
-        <td><%= cycle.defect_type %></td>
+        <td><%= cycle.defect_type_id %></td>
         <td><%= cycle.cavity_number %></td>
         <td><%= cycle.job_number %></td>
         <td><%= cycle.shift %></td>
-        <td><%= cycle.location %></td>
+        <td><%= cycle.location_id %></td>
         <td><%= link_to 'Show', cycle %></td>
         <td><%= link_to 'Edit', edit_cycle_path(cycle) %></td>
         <td><%= link_to 'Destroy', cycle, method: :delete, data: { confirm: 'Are you sure?' } %></td>

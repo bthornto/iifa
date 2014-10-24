@@ -1,47 +1,32 @@
 ACDC-Acidified Cucumber
-Reg Orange
 Acidified Beet
 Acidified Ginger
 Apple Berry
-Coconut
-Defense Up
+COCONUT
 Coconut Water Greens
-Reg Apple
-Essential Greens
 Coconut Water Pineapple
-Org Apple
 CPW-Coconut Pineapple Water
 CWG-Coconut Water Greens
-Super Green
+Defense Up
 EG-Essential Greens
-Orange Carrot Mango
+Essential Greens
 Essential Vegetable
 EV-Essential Veggies
-Org Orange
+Flavor
 Grapefurit
-Org V
 Lemon
 Lime
 Mango
-Protein
-Sweet Greens and Lemon
 Mango Carrot Smoothie
 MCS-Mango Carrot Smoothy
-Org Avocado Greens
 O. Avocado Greens
 O. Grapefuirt
-Smoothie Greens
 O. Lemonade
-Org Strawberry Lemonade
 O. Ruby Roots
-Sweet Greens Smoothie base
 O. Splendid Carrot
-Org Lemonade
 O. Strawberry Lemonade
-Strawberry Smoothie
 O. Sweet Ginger lemon
 OA-Organic Apple
-Org Grapefruit
 OAC-OreganicAcidified Carrot
 OAG-Organic Avocado Greens
 OCA-Organic Carrot Apple
@@ -53,28 +38,42 @@ OL-Organic Lemon
 OM-Orange Mango
 OO-Oraganic Orange
 OOJ
+Orange Carrot Mango
+Org Apple
+Org Avocado Greens
 Org Carrot Apple
-Pineapple
 Org Carrot Mango
-SGL-Sweet Greens & Lemon
+Org Grapefruit
+Org Lemonade
+Org Orange
+Org Strawberry Lemonade
+Org V
 Org. Spicy Lemonade
 Org. Sweet Greens & Ginger
 ORR-Organic Ruby Roots
 OSB-Organic Sweet Burn
 OSL-Organic Spicy Lemonade
 OV-Organic Veggie
+Pineapple
 PP-Protein Power
-SGB-Sweet Green Base
-ACDC-Acidified Cucumber
+Protein
 RA-Regular Apple
-Tangerine
+Reg Apple
+Reg Orange
 RGF-Regular Grapefruit
 RL-Regular Lemon
 RO-Regular Orange
 SBS-Strawberry Smoothy
 SC-Splendid Carrot
 SG-Sweet Green
+SGB-Sweet Green Base
 SGG-Sweet Greens & Ginger
+SGL-Sweet Greens & Lemon
 SGSM-Sweet Greens Smoothy
+Smoothie Greens
+Strawberry Smoothie
 Strawberry Smoothy
+Super Green
+Sweet Greens and Lemon
 Sweet Greens Lemon
+Sweet Greens Smoothie base
