@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboard/render'
+
   resources :cycles
 
   resources :complaints
